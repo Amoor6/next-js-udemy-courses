@@ -1,16 +1,22 @@
 import Link from 'next/link';
-
-function page() {
+import classes from './page.module.css';
+import MealsGrid from '@/components/meals/meals-grid';
+export default function MealsPage() {
   return (
-    <div>
-      <div>meal</div>
-      <div style={{ marginTop: '20px' }}>
-        <Link href="/meals/share">
-          <button>Share Meal</button>
-        </Link>
-      </div>
-    </div>
-  )
+    <>
+      <header className={classes.header}>
+        <h1>
+          Delicious meals, created{' '}
+          <span className={classes.highlight}>by you</span>
+        </h1>
+        <p>Choose your favorite recepie and cook it yourself</p>
+        <p className={classes.cta}>
+          <Link href='/meals/share'>Share your favorite recepie </Link>
+        </p>
+      </header>
+      <main className={classes.main}>
+        <MealsGrid meals={[]} />
+      </main>
+    </>
+  );
 }
-
-export default page
