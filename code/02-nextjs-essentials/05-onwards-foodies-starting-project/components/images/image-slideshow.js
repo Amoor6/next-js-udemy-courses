@@ -33,7 +33,6 @@ export default function ImageSlideshow() {
 
     return () => clearInterval(interval);
   }, []);
-
   return (
     <div className={classes.slideshow}>
       {images.map((image, index) => (
